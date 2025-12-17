@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <section id="section-landing" class="screen active">
+        <div class="content-wrapper text-center">
+            <h1 class="script-title glow-text">Hello, My Lady.</h1>
+            <p class="subtitle">I have a plan, I just wanna know the date.</p>
+            
+            <div class="glass-card date-card">
+                <p class="instruction">When are we doing this?</p>
+                <div class="dates-grid">
+                    <button class="date-btn" onclick="selectDate('18th Dec')">
+                        <span class="day">Thu</span><span class="num">18</span>
+                    </button>
+                    <button class="date-btn" onclick="selectDate('19th Dec')">
+                        <span class="day">Fri</span><span class="num">19</span>
+                    </button>
+                    <button class="date-btn" onclick="selectDate('20th Dec')">
+                        <span class="day">Sat</span><span class="num">20</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-story" class="screen">
+        <div class="story-book glass-card">
+            <div class="story-header">
+                <span id="chapter-number">Chapter 1</span>
+            </div>
+            
+            <div class="story-content text-center">
+                <div id="story-icon" class="story-icon-box pulse">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 id="story-title">Title Here</h2>
+                <p id="story-desc">Description Here</p>
+                
+                <div id="food-options" class="food-grid hidden">
+                    <button class="food-btn" onclick="selectFood('Desi Indian')">Desi Indian 🍛</button>
+                    <button class="food-btn" onclick="selectFood('Italian')">Italian 🍝</button>
+                    <button class="food-btn" onclick="selectFood('Chinese')">Chinese 🍜</button>
+                    <button class="food-btn" onclick="selectFood('Mix of All 3')">Mix of All 3 🍱</button>
+                </div>
+            </div>
+
+            <div class="story-footer">
+                <div class="dots-container" id="dots-container">
+                    <span class="dot active-dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+                <button class="next-page-btn" id="next-page-btn" onclick="nextChapter()">
+                    Turn Page <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="finish-story-btn hidden" id="finish-story-btn" onclick="goToAsk()">
+                    The End? <i class="fas fa-heart"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-ask" class="screen">
+        <div class="content-wrapper text-center">
+            <h1 class="script-title" style="font-size: 4rem;">So, do we have a date?</h1>
+            <div class="buttons-container relative h-32 w-full max-w-md mx-auto mt-10 flex justify-center items-center gap-4">
+                <button class="action-btn yes-btn z-10" onclick="generateTicket()">YES! 💖</button>
+                <button class="action-btn no-btn" id="no-btn" onmouseover="moveButton()">No</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-ticket" class="screen">
+        <div class="glass-card ticket">
+            <div class="ticket-header">
+                <h3>BOARDING PASS</h3>
+                <i class="fas fa-plane-departure plane-icon"></i>
+            </div>
+            <div class="ticket-body">
+                <div class="ticket-row">
+                    <div class="ticket-item">
+                        <span class="label">PASSENGER</span>
+                        <span class="value">My Lady (Jil)</span>
+                    </div>
+                    <div class="ticket-item text-right">
+                        <span class="label">DATE</span>
+                        <span class="value" id="final-date">TBD</span>
+                    </div>
+                </div>
+                <div class="ticket-row">
+                    <div class="ticket-item">
+                        <span class="label">DESTINATION</span>
+                        <span class="value">Hotel Staycation</span>
+                    </div>
+                    <div class="ticket-item text-right">
+                        <span class="label">MENU</span>
+                        <span class="value" id="final-food">Surprise</span>
+                    </div>
+                </div>
+                <div class="barcode-area">
+                    <p class="scan-msg">Scan this QR with your phone</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=7c3aed&bgcolor=ffffff&data=https://www.youtube.com/watch?v=1w0G5Ww4mQc" alt="Secret Song" class="qr-img">
+                    <p class="secret-hint"> ( It's a surprise ) </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
